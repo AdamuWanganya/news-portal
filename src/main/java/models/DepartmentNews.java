@@ -30,4 +30,9 @@ public class DepartmentNews extends News {
         return departmentId == that.departmentId;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), departmentId);
+    }
 }
+
