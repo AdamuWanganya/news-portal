@@ -11,4 +11,14 @@ public class DepartmentNews extends News {
         super(id, userId, type, content, postdate);
         this.departmentId = departmentId;
     }
+
+    public int getDepartmentId() {
+
+        return departmentId;
+    }
+    public void setDepartmentId(int departmentId) {
+
+        this.departmentId = departmentId;
+    }
+
 }
