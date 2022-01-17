@@ -70,4 +70,10 @@ public class News {
                 Objects.equals(content, news.content);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, userid, type, content);
+    }
+
+
 }
