@@ -49,4 +49,25 @@ public class Department {
                 Objects.equals(description, that.description);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description);
+    }
+
+    public static class DepartmentWithUserCount extends  Department {
+        private int count;
+
+        public DepartmentWithUserCount(int id, String name, String description,int count) {
+            super(id, name, description);
+            this.count=count;
+        }
+
+        public int getCount() {
+            return count;
+        }
+        public void setCount(int count) {
+            this.count = count;
+        }
+    }
+
 }
