@@ -59,4 +59,15 @@ public class News {
         this.postdate = postdate;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        News news = (News) o;
+        return id == news.id &&
+                userid == news.userid &&
+                Objects.equals(type, news.type) &&
+                Objects.equals(content, news.content);
+    }
+
 }
