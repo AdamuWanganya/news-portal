@@ -1,27 +1,24 @@
 package dao;
 
-import models.Department;
-import models.DepartmentNews;
+import models.Department_News;
 import models.News;
 
 import java.util.List;
 
 public interface NewsDao {
+    //create
 
-    List<News> getAllNews();
-    List<News> getGeneralNews();
-    List<DepartmentNews> getDepartmentNews();
+    void addNews(News news);
+    void addDepartmentNews(Department_News department_news);
 
-    void addGeneralNews(News news);
-    void addDepartmentNews(DepartmentNews dptNews);
+    //read
+    List<News> getAll();
 
-    News findGeneralNewsById(int id);
-    DepartmentNews findDepartmentNewsById(int id);
+    News findById(int id);
 
-    void updateGeneralNews(News news, int userId, String content);
-    void updateDepartmentNews(DepartmentNews dptNews, int userId, String content, int departmentId);
+    //update
 
-    void clearAllNews();
-    void clearGeneralNews();
-    void clearDepartmentNews();
+    //delete
+
+    void clearAll();
 }

@@ -1,12 +1,37 @@
+CREATE DATABASE organisational_news_portal;
+\c organisational_news_portal
 
-create database newsportal;
+CREATE TABLE departments (
+id SERIAL PRIMARY KEY,
+name VARCHAR,
+description VARCHAR,
+size int
+);
 
-\c newsportal
+CREATE TABLE news (
+id SERIAL PRIMARY KEY,
+news_type VARCHAR,
+department_id INT,
+user_id INT,
+title VARCHAR,
+description VARCHAR
+);
 
-CREATE TABLE users (id serial PRIMARY KEY, name varchar, position varchar, role varchar, departmentId int);
+CREATE TABLE staff (
+id SERIAL PRIMARY KEY,
+name VARCHAR,
+position VARCHAR,
+staff_role VARCHAR
+);
 
-CREATE TABLE departments (id serial PRIMARY KEY, name varchar, description varchar);
+CREATE TABLE users_departments (
+id SERIAL PRIMARY KEY,
+user_id INT,
+department_id INT
+);
 
-CREATE TABLE news (id serial PRIMARY KEY, userId int, content varchar, postdate timestamp, departmentId int, type varchar);
 
-CREATE DATABASE newsportal_test WITH TEMPLATE newsportal;
+
+
+
+CREATE DATABASE organisational_news_portal_test WITH TEMPLATE organisational_news_portal;
