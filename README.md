@@ -3,7 +3,7 @@
 This is a java website that allows user to be added on department,view news related to deparments.
 
 ## Live link
-
+- https://portalss-newss.herokuapp.com/
 
 
 

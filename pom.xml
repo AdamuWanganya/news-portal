@@ -95,7 +95,7 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>organisational-newsss</appName>
+                    <appName>portalss-newss</appName>
                     <processTypes>
                         <web>java -jar target/organisational-news-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
