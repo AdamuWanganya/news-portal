@@ -1,6 +1,6 @@
 package dao;
 
-import models.News;
+import models.User;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,21 +10,21 @@ import org.sql2o.Sql2o;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Sql2oNewsDaoTest {
-    private static Sql2oNewsDao sql2oNewsDao;
+class Sql2oUserDaoTest {
+    private static Sql2oUserDao sql2oUserDao;
     private static Connection conn;
 
     @BeforeAll
     static void setUp() {
         String connectionString = "jdbc:postgresql://localhost:5432/portal_news_test";
         Sql2o sql2o = new Sql2o(connectionString, "adamu", "Adamu");
-        sql2oNewsDao = new Sql2oNewsDao(sql2o);
+        sql2oUserDao = new Sql2oUserDao(sql2o);
         conn = sql2o.open();
     }
 
     @AfterEach
     void afterEach() {
-        sql2oNewsDao.clearAll();
+        sql2oUserDao.clearAll();
     }
 
     @AfterAll
@@ -33,15 +33,16 @@ class Sql2oNewsDaoTest {
     }
 
     @Test
-    void newsSavedAndReturnedInDb() {
-        News testNews = setUpNews();
-        sql2oNewsDao.save(testNews);
-        News savedNews = sql2oNewsDao.findById(testNews.getId());
-        assertTrue(testNews.equals(savedNews));
+    void userSavedAndReturnedFromDb() {
+        User testUser = setUpUser();
+        sql2oUserDao.save(testUser);
+        User savedUser = sql2oUserDao.findById(testUser.getId());
+        assertTrue(testUser.equals(savedUser));
     }
 
-    public News setUpNews() {
-        News testNews = new News("Breaking News", "CEO is fired", 30);
-        return testNews;
+    public User setUpUser() {
+        User testUser = new User("Adamu", 1, "CTO", 5);
+        return testUser;
     }
+
 }
