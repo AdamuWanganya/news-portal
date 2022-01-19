@@ -1,6 +1,6 @@
 CREATE DATABASE portal_news;
 
-\c organisational_news
+\c portal_news
 
 CREATE TABLE departments (id SERIAL PRIMARY KEY, name varchar, description varchar);
 
